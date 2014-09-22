@@ -1,0 +1,16 @@
+// Colors
+$color-text: #505050;
+$color-text-faded: lighten($color-text, 30%);
+
+$color-text-negative: #fff;
+
+$color-display: #353535;
+$color-selection: #fff;
+$color-selection-bg: rgba(0,0,0,.6);
+
+$color-border: #aaa;
+
+$color-interactive: #d74340; // faded red
+
+$color-link: $color-interactive;
+$color-link-hover: lighten($color-link, 15%);

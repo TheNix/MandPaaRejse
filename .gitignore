@@ -1,0 +1,21 @@
+# Mac crap
+.DS_Store
+
+# Frontend #
+.sass-cache
+*.css
+*.scssc
+*/javascripts/main-min.js
+*/stylesheets/
+*/!stylesheets/custom.css
+*/css/
+*/!css/custom.css
+
+node_modules
+
+#Umbraco
+TEMP/
+Logs/
+Cached/
+preview/
+App_Data/logs/
