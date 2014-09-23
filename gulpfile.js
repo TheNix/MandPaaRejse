@@ -34,7 +34,7 @@ gulp.task('styles', function () {
   if (development === true) {
     gulp.src('assets/sass/main.scss')
       .pipe(compass( compassDefaults ))
-      .pipe(notify({ message: 'Styles task complete- DEVELOPMENT' }));
+      .pipe(notify({ message: 'Styles (DEV) task complete. \n Saved to ' + paths.styles.dest }));
 
   } else {
     // Override defaults, so output is trimmed down
@@ -44,7 +44,7 @@ gulp.task('styles', function () {
 
     gulp.src('temp/css/main.scss')
       .pipe(compass( compassDefaults ))
-      .pipe(notify({ message: 'Styles task complete - PRODUCTION' }));
+      .pipe(notify({ message: 'Styles task complete. \n Saved to ' + paths.styles.dest }));
   }
 });
 
