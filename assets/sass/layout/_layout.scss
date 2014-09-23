@@ -11,9 +11,10 @@
 
 
 .fact-section {
-	&__author-image {
-		border-radius: 50% 50%;
-	}
+  &__author-image {
+    border: solid 20px #fff;
+    border-radius: 50% 50%;
+  }
 }
 
 
