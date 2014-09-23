@@ -4,9 +4,7 @@
 
 %container {
   @include container;
-  // @include each-layout {
-  //   @include set-container-width;
-  // }
+
   padding: {
     left: $grid-padding;
     right: $grid-padding;
@@ -14,13 +12,10 @@
 }
 
 %drop-shadow {
-  @include box-shadow(0 0 3px rgba(#000, .5));
+  // @include box-shadow(0 0 3px rgba(#000, .5));
 }
 
 %rounded {
-  @include border-radius(4px);
+  border-radius: 4px;
 }
 
-%rounded {
-	@include border-radius(4px);
-}

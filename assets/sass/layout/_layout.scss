@@ -1,9 +1,9 @@
 .intro-section {
-	@include container;
+  @extend %container;
+  background: url('../../assets/images/bg/dimension.png');
+  border-bottom: solid 1px $color-interactive;
 
-	padding: 20px;
-
-	background: url('../../assets/images/bg/dimension.png');
+  padding: 20px;
   &__text {
 
   }
@@ -17,5 +17,11 @@
 }
 
 
-.btn--download { @extend %button-primary; }
-.btn--purchase { @extend %button-secondary; }
+.btn--download {
+  @extend %button-primary;
+  width: 100%;
+}
+.btn--purchase {
+  @extend %button-secondary;
+  width: 100%;
+}

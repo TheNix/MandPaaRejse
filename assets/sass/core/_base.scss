@@ -37,6 +37,10 @@ body {
   }
 }
 
+img {
+  max-width: 100%;
+}
+
 .grid-toggle {
   @include border-bottom-left-radius(10px);
   background: rgba(#000, .2);

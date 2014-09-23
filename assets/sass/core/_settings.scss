@@ -43,7 +43,7 @@ $grid-padding: $gutter-width / 3;
 
 $susy: (
   columns: 12,
-  gutters: 30px,
+  gutters: $gutter-width,
   math: fluid,
   output: float,
   gutter-position: inside,

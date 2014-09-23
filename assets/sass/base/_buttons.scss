@@ -24,6 +24,8 @@ button,
 .button {
   @extend %button;
 
+  margin-bottom: 20px;
+
   &:focus { outline: 0 none; }
   &:active {
     outline: 0 none;
