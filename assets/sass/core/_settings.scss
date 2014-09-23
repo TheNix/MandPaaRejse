@@ -39,6 +39,19 @@ $column-width: 60px;
 $gutter-width: 30px;
 $grid-padding: $gutter-width / 3;
 
+
+
+$susy: (
+  columns: 12,
+  gutters: 30px,
+  math: fluid,
+  output: float,
+  gutter-position: inside,
+);
+
+
+
+
 // $container-style: magic; // "static", "fluid", "magic"
 
 // ---------------------------------------------------------------------------

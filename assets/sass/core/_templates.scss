@@ -4,9 +4,9 @@
 
 %container {
   @include container;
-  @include each-layout {
-    @include set-container-width;
-  }
+  // @include each-layout {
+  //   @include set-container-width;
+  // }
   padding: {
     left: $grid-padding;
     right: $grid-padding;
