@@ -7,6 +7,7 @@
 // Settings (imported before Compass stuff to allow overrides of defaults)
 @import "core/settings";
 @import "core/helpers";
+@import "core/templates";
 
 // // Compass
 @import "lib/normalize";
@@ -19,6 +20,7 @@
 @import "base/tables";
 @import "base/lists";
 @import "base/buttons";
+@import "base/modal";
 
 @import "core/base";
 @import "core/templates";
@@ -27,7 +29,5 @@
 @import "layout/layout";
 
 
-// // Modules
-// @import "modules/calendar-widget";
-// @import "modules/message-strip";
-// @import "modules/teaser";
+// Modules
+@import "modules/modal";
