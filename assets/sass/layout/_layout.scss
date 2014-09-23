@@ -9,5 +9,13 @@
   }
 }
 
+
+.fact-section {
+	&__author-image {
+		border-radius: 50% 50%;
+	}
+}
+
+
 .btn--download { @extend %button-primary; }
 .btn--purchase { @extend %button-secondary; }
