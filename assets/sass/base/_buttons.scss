@@ -41,7 +41,7 @@ button,
   @include text-shadow(none);
   &:hover,
   &:active {
-    background: #81E4F7;
+    background: $color-interactive-hover;
     @include box-shadow(none);
   }
 }
@@ -49,11 +49,11 @@ button,
 %button-secondary {
   @extend %button;
 
-  background: #ef6969;
+  background: $color-tertiary;
 
   &:hover,
   &:active {
-    background: lighten(#ef6969, 10%);
+    background: $color-tertiary-faded;
     @include box-shadow(none);
   }
 }
