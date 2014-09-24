@@ -1,11 +1,32 @@
 .intro-section {
   @extend %container;
   background: url('../../assets/images/bg/dimension.png');
-  border-bottom: solid 1px $color-interactive;
+  border: {
+    color: $color-primary;
+    style: solid;
+    width: 10px 0 1px;
+  }
+  box-shadow: inset 0 2px 0 $color-secondary;
 
   padding: 20px;
+
+  &__header {}
+
+  &__subheader {
+    border: {
+      color: $color-primary;
+      style: dotted;
+      width: 1px 0;
+    }
+    padding: 10px 0;
+  }
+
   &__text {
 
+  }
+
+  &__cover {
+    text-align: center;
   }
 }
 
