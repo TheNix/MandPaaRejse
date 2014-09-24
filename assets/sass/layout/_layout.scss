@@ -39,6 +39,52 @@
 }
 
 
+.quote-section {
+  background: #eee;
+  border-bottom: solid 1px $color-primary;
+  padding: 20px 0;
+
+  &__inner { @extend %container; }
+
+  &__item {
+    background: #fff;
+    display: block;
+    margin: 0 0 20px;
+    padding: 20px 10px 10px;
+  }
+
+  &__text {
+    display: block;
+    padding-left: 20px;
+    position: relative;
+
+    &:before {
+      color: $color-primary;
+      content: open-quote;
+      font-size: 40px;
+      position: absolute;
+        left: 0;
+        top: -10px;
+    }
+  }
+
+  &__cite {
+    background: $color-primary;
+    border-radius: 4px 0 0 4px;
+    border-right: solid 2px $color-secondary;
+    color: $color-text-negative;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: -15px;
+    padding: 8px 24px 8px 8px;
+
+    &:before {
+      content: '– ';
+    }
+  }
+}
+
+
 .footer-section {
   background: #333;
 
