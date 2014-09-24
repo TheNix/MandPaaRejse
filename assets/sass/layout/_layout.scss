@@ -39,8 +39,15 @@
 }
 
 
+.footer-section {
+  background: #333;
+
+  &__inner { @extend %container; }
+}
+
 .btn--download {
   @extend %button-primary;
+  margin-top: 20px;
   width: 100%;
 }
 .btn--purchase {
