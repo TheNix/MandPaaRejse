@@ -1,20 +1,21 @@
-table { width:100%; }
+table {
+  font-size: 16px; font-size: 1.6rem;
+  width:100%;
+}
 
 th {
-  background: #ccc;
-  border-bottom: solid 1px #aaa;
-  font-size: 120%;
+  border-bottom: dotted 1px $color-primary;
   padding: 5px;
   text-align: left;
 }
 
 tr {
-  &:nth-child(even) {
-    background: #eee;
+  &:nth-child(odd) {
+    background: url("../../assets/images/bg/dimension.png");
   }
 }
 
 td {
-  border-bottom: solid 1px #aaa;
+  border-bottom: dotted 1px $color-primary;
   padding: 5px;
 }

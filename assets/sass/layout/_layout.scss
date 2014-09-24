@@ -32,9 +32,33 @@
 
 
 .fact-section {
+  border-bottom: solid 1px $color-primary;
+  padding: 20px 0;
+
+  &__inner { @extend %container; }
+
+  &__subheader {
+    border-bottom: dotted 1px $color-primary;
+    margin-bottom: 0;
+    padding: 10px 0;
+  }
+
+  &__table {
+    margin-bottom: 20px;
+  }
+
   &__author-image {
-    border: solid 20px #fff;
+    // border: solid 20px #fff;
     border-radius: 50% 50%;
+  }
+
+  &__author  {
+
+    text-align: center;
+
+    h3 { border-top: dotted 1px $color-primary; }
+
+    p { text-align: left; }
   }
 }
 
