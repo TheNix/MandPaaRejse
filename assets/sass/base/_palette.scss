@@ -1,16 +1,21 @@
 // Colors
+$color-primary: #169aa7; // teal
+$color-secondary: #ef6969; // salmon
+
+$color-primary-faded: #577073;
+
 $color-text: #505050;
 $color-text-faded: lighten($color-text, 30%);
 
 $color-text-negative: #fff;
 
-$color-display: #353535;
+$color-display: $color-primary;
 $color-selection: #fff;
 $color-selection-bg: rgba(0,0,0,.6);
 
 $color-border: #aaa;
 
-$color-interactive: #169aa7; // turqoise
+$color-interactive: $color-primary;
 
-$color-link: $color-interactive;
+$color-link: $color-secondary;
 $color-link-hover: lighten($color-link, 15%);
