@@ -1,5 +1,4 @@
 .intro-section {
-  @extend %container;
   background: url('../../assets/images/bg/dimension.png');
   border: {
     color: $color-primary;
@@ -9,6 +8,11 @@
   box-shadow: inset 0 2px 0 $color-secondary;
 
   padding: 20px;
+
+  &__inner {
+    @extend %container;
+    position: relative;
+  }
 
   &__header {}
 
@@ -22,11 +26,22 @@
   }
 
   &__text {
-
+    @include breakpoint($bp-medium) {
+      @include span(6 of 12);
+    }
   }
 
   &__cover {
     text-align: center;
+
+    @include breakpoint($bp-medium) {
+      @include span(6 of 12);
+
+      position: absolute;
+        bottom: 0;
+        right: 0;
+      text-align: right;
+    }
   }
 }
 
@@ -38,9 +53,14 @@
   &__inner { @extend %container; }
 
   &__subheader {
-    border-bottom: dotted 1px $color-primary;
     margin-bottom: 0;
     padding: 10px 0;
+  }
+
+  &__book {
+    @include breakpoint($bp-large) {
+      @include span(6 of 12);
+    }
   }
 
   &__table {
@@ -54,11 +74,12 @@
 
   &__author  {
 
-    text-align: center;
+    h3 { border-bottom: dotted 1px $color-primary; }
 
-    h3 { border-top: dotted 1px $color-primary; }
-
-    p { text-align: left; }
+    @include breakpoint($bp-large) {
+      @include span(6 of 12);
+      margin-right: 0;
+    }
   }
 }
 
@@ -75,6 +96,16 @@
     display: block;
     margin: 0 0 20px;
     padding: 20px 10px 10px;
+
+    @include breakpoint($bp-large) {
+      @include span(4 of 12);
+
+      box-sizing: border-box;
+
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+    }
   }
 
   &__text {
@@ -113,6 +144,14 @@
   background: #333;
 
   &__inner { @extend %container; }
+
+  @include breakpoint($bp-medium) {
+    .btn--download,
+    .btn--purchase {
+      @include span(6 of 12);
+    }
+    .btn--purchase { margin-top: 20px; margin-right: 0; }
+  }
 }
 
 .btn--download {

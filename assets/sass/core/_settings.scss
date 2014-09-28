@@ -43,12 +43,19 @@ $grid-padding: $gutter-width / 3;
 
 $susy: (
   columns: 12,
-  gutters: $gutter-width,
+  column-width: 60px,
+  gutters: 1/4,
   math: fluid,
-  output: float,
-  gutter-position: inside,
+  output: float
 );
 
+
+// ---------------------------------------------------------------------------
+// Breakpoint
+$bp-small :    400px;
+$bp-medium:    600px;
+$bp-large :    769px;
+$bp-xlarge:   1000px;
 
 
 
