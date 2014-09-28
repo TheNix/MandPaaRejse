@@ -1,3 +1,63 @@
 %modal {
-  display: none;
+	color: inherit;
+}
+
+.modal {
+	text-align: center;
+  &.is-open {
+    &:after {
+      height: 100%;
+      opacity: 1;
+      width: 100%;
+
+      transition:
+        opacity 2s ease-in-out;
+    }
+
+    .modal__content {
+      top: 4rem;
+    }
+  }
+
+	// Full-size background behind modal, obscuring content. Sort of.
+  &:after {
+    background: rgba(255,255,255,.8);
+    content: '';
+    display: block;
+    height: 0;
+    position: absolute;
+      top: 0; left: 0; z-index: 0;
+    width: 0;
+
+    transition:
+      opacity 2s ease-in-out;
+  }
+
+  &__content {
+    background: #fff;
+    border: dashed 2px $color-secondary;
+    box-shadow: 0 0 0 3px #fff;
+    box-sizing: border-box;
+    display: inline-block;
+    margin-left: -30rem;
+    padding: 4rem;
+    position: fixed;
+    	top: -100%; left: 50%; z-index: 2;
+  	text-align: left;
+    width: 60rem;
+
+    transition: top .4s ease-in-out;
+  }
+
+  &__close {
+  	background: $color-tertiary;
+  	border-radius: 50%;
+  	box-shadow: none;
+  	color: #fff;
+  	height: 25px;
+  	padding: 0;
+  	position: absolute;
+  		top: 5px; right: 5px; z-index: 3;
+		width: 25px;
+  }
 }

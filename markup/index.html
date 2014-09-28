@@ -109,14 +109,19 @@
       </div>
     </footer>
 
-    <aside class="modal-purchase">
+    <aside class="modal-purchase modal">
+      <div class="modal__content">
+
+      <button class="modal__close">X</button>
+
       <h4>K&oslash;b bogen online, og f&aring; den sendt til din postkasse</h4>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos necessitatibus distinctio, illo officiis odio veniam voluptatibus voluptate doloribus mollitia natus eum minus assumenda, delectus incidunt, explicabo beatae, similique expedita repellendus.</p>
 
       <form action="" class="form-purchase">
-        <input type="email" class="form-purchase__email" required>
-        <input type="submit" class="form-purchase__submit">
+        <input type="email" class="form-purchase__email" placeholder="Indtast din e-mail &hellip;" required>
+        <input type="submit" class="form-purchase__submit" value="Bestil">
       </form>
+      </div>
     </aside>
 
     <!-- JavaScript at the bottom for fast page loading -->
@@ -125,6 +130,25 @@
 
     <!-- Uncompressed JS for development -->
     <script src="javascripts/main.js"></script>
+
+    <script>
+    var $triggerOn = document.querySelector('.btn--download');
+    var $triggerOff = document.querySelector('.modal__close');
+    var $modal   = document.querySelector('aside');
+
+    function toggleModal(){
+      $modal.classList.toggle('is-open');
+    }
+    $triggerOn.addEventListener('click', toggleModal );
+    $triggerOff.addEventListener('click', toggleModal );
+
+    document.onkeydown = function(evt) {
+        evt = evt || window.event;
+        if (evt.keyCode == 27) {
+            $modal.classList.remove('is-open');
+        }
+};
+    </script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>

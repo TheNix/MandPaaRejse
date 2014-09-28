@@ -139,6 +139,25 @@
   }
 }
 
+/*
+  FORMS
+*/
+
+.form-purchase {
+
+  &__email {
+    margin-top: 40px;
+    width: 70%;
+  }
+
+  &__submit {
+    @extend %button-primary;
+    float: right;
+    margin-top: 40px;
+    width: 25%;
+  }
+}
+
 
 .footer-section {
   background: #333;
