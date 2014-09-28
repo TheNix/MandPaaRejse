@@ -26,7 +26,7 @@ var compassDefaults = {
   css: paths.styles.dest,
   sass: 'assets/sass',
   image: 'assets/images',
-  require: ['susy'],
+  require: ['susy', 'breakpoint'],
   style: 'compressed'
 }
 
