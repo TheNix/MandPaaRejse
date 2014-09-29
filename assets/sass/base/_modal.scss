@@ -3,7 +3,6 @@
 }
 
 .modal {
-	text-align: center;
   &.is-open {
     &:after {
       height: 100%;
@@ -15,7 +14,10 @@
     }
 
     .modal__content {
-      top: 4rem;
+      top: 0;
+      @include breakpoint($bp-medium) {
+      	top: 4rem;
+      }
     }
   }
 
@@ -25,7 +27,7 @@
     content: '';
     display: block;
     height: 0;
-    position: absolute;
+    position: fixed;
       top: 0; left: 0; z-index: 0;
     width: 0;
 
@@ -35,18 +37,23 @@
 
   &__content {
     background: #fff;
-    border: dashed 2px $color-secondary;
+    border-bottom: dashed 2px $color-secondary;
     box-shadow: 0 0 0 3px #fff;
     box-sizing: border-box;
     display: inline-block;
-    margin-left: -30rem;
     padding: 4rem;
     position: fixed;
-    	top: -100%; left: 50%; z-index: 2;
-  	text-align: left;
-    width: 60rem;
+    	top: -100%; left: 0; z-index: 2;
+    width: 100%;
 
     transition: top .4s ease-in-out;
+
+    @include breakpoint($bp-medium) {
+			border: dashed 2px $color-secondary;
+			margin-left: -30rem;
+			left: 50%;
+			width: 60rem;
+    }
   }
 
   &__close {
