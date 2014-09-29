@@ -1,13 +1,13 @@
 .intro-section {
-  background: url('../../assets/images/bg/dimension.png');
+  background: #fff;
   border: {
     color: $color-primary;
     style: solid;
-    width: 10px 0 1px;
+    width: 10px 0 0;
   }
   box-shadow: inset 0 2px 0 $color-secondary;
 
-  padding: 20px;
+  padding: 60px 0;
 
   &__inner {
     @extend %container;
@@ -47,8 +47,7 @@
 
 
 .fact-section {
-  border-bottom: solid 1px $color-primary;
-  padding: 20px 0;
+  padding: 60px 0;
 
   &__inner { @extend %container; }
 
@@ -85,9 +84,8 @@
 
 
 .quote-section {
-  background: #eee;
-  border-bottom: solid 1px $color-primary;
-  padding: 20px 0;
+  background: #f4f4f4;
+  padding: 60px 0;
 
   &__inner { @extend %container; }
 
@@ -147,14 +145,22 @@
 
   &__email {
     margin-top: 40px;
-    width: 70%;
+    width: 100%;
+    @include breakpoint($bp-medium) {
+      width: 70%;
+    }
   }
 
   &__submit {
     @extend %button-primary;
-    float: right;
-    margin-top: 40px;
-    width: 25%;
+    margin-top: 15px;
+    width: 100%;
+
+    @include breakpoint($bp-medium) {
+      float: right;
+      margin-top: 40px;
+      width: 25%;
+    }
   }
 }
 
