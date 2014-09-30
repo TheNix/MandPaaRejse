@@ -132,28 +132,9 @@
     <!-- JavaScript at the bottom for fast page loading -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="javascripts/lib/jquery-2.1.1.min.js"><\/script>')</script>
+    <!-- (Unminified and unconcatenated JS source for development) -->
+    <script defer src="../assets/js/main.js"></script>
 
-    <!-- Uncompressed JS for development -->
-    <script src="javascripts/main.js"></script>
-
-    <script>
-    var $triggerOn = document.querySelector('.btn--download');
-    var $triggerOff = document.querySelector('.modal__close');
-    var $modal   = document.querySelector('aside');
-
-    function toggleModal(){
-      $modal.classList.toggle('is-open');
-    }
-    $triggerOn.addEventListener('click', toggleModal );
-    $triggerOff.addEventListener('click', toggleModal );
-
-    document.onkeydown = function(evt) {
-        evt = evt || window.event;
-        if (evt.keyCode == 27) {
-            $modal.classList.remove('is-open');
-        }
-};
-    </script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
