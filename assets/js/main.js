@@ -27,22 +27,27 @@ App.Main = (function() {
    * @return {void}
    */
   function _setupDOM() {
-    dom.$triggerOn  = document.querySelector('.btn--download');
-    dom.$triggerOff = document.querySelector('.modal__close');
-    dom.$modal      = document.querySelector('.modal-purchase');
+    dom.$triggerOn  = document.getElementsByClassName('js-btn-trigger');
+    dom.$triggerOff = document.getElementsByClassName('modal__close');
+    dom.$modal      = document.getElementsByClassName('modal');
   }
 
   /**
    * Attach event listeners to DOM elements
    */
   function _addEventListeners() {
-    dom.$triggerOn.addEventListener('click', _toggleModalOn );
-    dom.$triggerOff.addEventListener('click', _toggleModalOff );
+    for(var i=0;i<dom.$triggerOn.length;i++){
+      dom.$triggerOn[i].addEventListener('click', _toggleModalOn );
+    }
+
+    for(var i=0;i<dom.$triggerOff.length;i++){
+      dom.$triggerOff[i].addEventListener('click', _toggleModalOff );
+    }
 
     document.onkeydown = function(e) {
       e = e || window.event;
       if (e.keyCode == 27) { // If ESC is pressed
-        _toggleModalOff;
+        _toggleModalOff();
       }
     }
   }
@@ -53,15 +58,20 @@ App.Main = (function() {
    * @return {void}
    */
   function _toggleModalOn(){
+    var modalId = this.getAttribute('data-trigger');
+    var _$modal = document.querySelectorAll('[data-modal-id=' + modalId + ']');
+
     // Make sure class can only be added once
-    if (dom.$modal.classList.contains('is-open') === false) {
-      dom.$modal.classList.add('is-open');
+    if (_$modal[0].classList.contains('is-open') === false) {
+      _$modal[0].classList.add('is-open');
     }
   }
 
   function _toggleModalOff(){
     // Class check not needed, it will always be removed
-    dom.$modal.classList.remove('is-open');
+    for(var i=0;i<dom.$modal.length;i++){
+      dom.$modal[i].classList.remove('is-open');
+    }
   }
 
   ////////////////
