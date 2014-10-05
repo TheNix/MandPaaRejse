@@ -49,11 +49,11 @@ button,
 %button-secondary {
   @extend %button;
 
-  background: $color-tertiary;
+  background: $color-secondary;
 
   &:hover,
   &:active {
-    background: $color-tertiary-faded;
+    background: $color-secondary-faded;
     @include box-shadow(none);
   }
 }
