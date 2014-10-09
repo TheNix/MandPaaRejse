@@ -1,0 +1,182 @@
+﻿@inherits UmbracoTemplatePage
+@{
+    Layout = null;
+
+    var quoteItems = CurrentPage.QuoteItem.OrderBy("publishDate desc, createDate desc");
+
+}
+<!doctype html>
+<html class="no-js" lang="da">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>@Umbraco.Field("pageTitle", altFieldAlias: "pageName") | @Umbraco.Field("siteName", recursive: true)</title>
+
+    <meta name="description" content=@Umbraco.Field("pageDescription")>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href='http://fonts.googleapis.com/css?family=Carter+One' rel='stylesheet' type='text/css'>
+
+    <link href="../public/stylesheets/main.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+      <script src="..assets/js/lib/html5shiv-3.7.2.js"></script>
+    <![endif]-->
+
+    <meta name="robots" content="noindex,nofollow">
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Intro section -->
+    <main class="intro-section">
+      <div class="intro-section__inner">
+        <article class="intro-section__text">
+          <h1 class="intro-section__header">@Umbraco.Field("introHeader")</h1>
+          <h2 class="intro-section__subheader">@Umbraco.Field("introSubheader")</h2>
+
+          @Umbraco.Field("introText")
+
+          <button class="btn--download js-btn-trigger" data-trigger="download">Download kapitel 1</button>
+          <button class="btn--purchase js-btn-trigger" data-trigger="purchase">K&oslash;b bogen online</button>
+
+        </article>
+
+        <figure class="intro-section__cover">
+        @if (Umbraco.Field("introImage") != null && !(Umbraco.Field("introImage") is Umbraco.Core.Dynamics.DynamicNull)) {
+            var m = Umbraco.Media(Umbraco.Field("introImage").ToString());
+            var alt = Umbraco.Field("introImageAlt");
+
+            <img src="@m.Url" alt="@alt" />
+        }
+        </figure>
+      </div>
+    </main>
+    <!-- End intro section -->
+
+    <!-- Quote section -->
+    <section class="quote-section">
+      <div class="quote-section__inner">
+
+        @foreach (var item in quoteItems) {
+        <blockquote class="quote-section__item">
+          <q class="quote-section__text">@item.quoteText</q>
+          <cite class="quote-section__cite">@item.quoteCite</cite>
+        </blockquote>
+        }
+
+      </div>
+    </section>
+    <!-- End Quote section -->
+
+    <!-- Fact section -->
+    <section class="fact-section">
+      <div class="fact-section__inner">
+
+        <div class="fact-section__book">
+          <h3 class="fact-section__subheader">Fakta</h3>
+
+          <table class="fact-section__table">
+            <tr>
+              <th>Titel</th>
+              <td>@Umbraco.Field("facTitle")</td>
+            </tr>
+            <tr>
+              <th>Forfatter</th>
+              <td>@Umbraco.Field("facAuthor")</td>
+            </tr>
+            @if(String.IsNullOrEmpty(@Umbraco.Field("facYear").ToString()) == false ) {
+            <tr>
+              <th>&Aring;rstal</th>
+              <td>@Umbraco.Field("facYear")</td>
+            </tr>
+            }
+            @if(String.IsNullOrEmpty(@Umbraco.Field("facLength").ToString()) == false ) {
+            <tr>
+              <th>Sideantal</th>
+              <td>@Umbraco.Field("facLength")</td>
+            </tr>
+            }
+            @if(String.IsNullOrEmpty(@Umbraco.Field("facIsbn").ToString()) == false ) {
+            <tr>
+              <th>ISBN</th>
+              <td>@Umbraco.Field("facIsbn")</td>
+            </tr>
+            }
+            @if(String.IsNullOrEmpty(@Umbraco.Field("facPublisher").ToString()) == false ) {
+            <tr>
+              <th>Forlag</th>
+              <td>@Umbraco.Field("facPublisher")</td>
+            </tr>
+            }
+          </table>
+        </div>
+
+        <figure class="fact-section__author">
+          <!-- <img src="../media/henrik.png" alt="Henrik Kruse" class="fact-section__author-image"> -->
+          <h3 class="fact-section__subheader">@Umbraco.Field("facAuthor")</h3>
+          @Umbraco.Field("facAuthorDesc")
+        </figure>
+      </div>
+    </section>
+    <!-- End fact section -->
+
+    <!-- Footer section -->
+    <footer class="footer-section">
+      <div class="footer-section__inner">
+        <button class="btn--download js-btn-trigger" data-trigger="download">Download kapitel 1</button>
+        <button class="btn--purchase js-btn-trigger" data-trigger="purchase">K&oslash;b bogen online</button>
+      </div>
+    </footer>
+    <!-- End footer section -->
+
+    <aside class="modal-purchase modal" data-modal-id="download">
+      <div class="modal__content">
+
+      <button class="modal__close">X</button>
+
+      <h4>F&aring; f&oslash;rste kapitel sendt til din mailbox – helt gratis</h4>
+      <p>Indtast din mail nedenunder. Du vil derefter modtage første kapitel som PDF direkte i din mailbox – kvit og frit.</p>
+
+      <form action="" class="form-purchase">
+        <input type="email" class="form-purchase__email" placeholder="Indtast din e-mail &hellip;" required>
+        <input type="submit" class="form-purchase__submit" value="Bestil">
+      </form>
+      </div>
+    </aside>
+
+    <aside class="modal-download modal" data-modal-id="purchase">
+      <div class="modal__content">
+
+      <button class="modal__close">X</button>
+
+      <h4>K&oslash;b bogen online, og f&aring; den sendt til din postkasse</h4>
+      <p>Indtast din email nedenunder. Du vil derefter modtage en mail, med betalingsoplysninger – og så modtage bogen direkte i din postkasse.</p>
+
+      <form action="" class="form-purchase">
+        <input type="email" class="form-purchase__email" placeholder="Indtast din e-mail &hellip;" required>
+        <input type="submit" class="form-purchase__submit" value="Bestil">
+      </form>
+      </div>
+    </aside>
+
+    <!-- JavaScript at the bottom for fast page loading -->
+    <!-- (Unminified and unconcatenated JS source for development) -->
+    <script defer src="../public/untitled folder/main.js"></script>
+
+    @if(String.IsNullOrEmpty(@Umbraco.Field("pageAnalyticsCode").ToString()) == false ) {
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','@Umbraco.Field("pageAnalyticsCode")');ga('send','pageview');
+    </script>
+    }
+  </body>
+</html>
